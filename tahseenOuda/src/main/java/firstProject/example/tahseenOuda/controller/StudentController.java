@@ -20,7 +20,6 @@ public class StudentController {
     @PostMapping
     public Student createStudent(@RequestBody StudentRequest request) {
         Student student = new Student(request.getName(), request.getMajor(), request.getGrade());
-        // ID يتم إنشاؤه تلقائياً - لا تعين ID للعناصر الجديدة
         return studentService.saveOrUpdateStudent(student);
     }
 
